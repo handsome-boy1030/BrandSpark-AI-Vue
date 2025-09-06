@@ -1,0 +1,13 @@
+/* src/styles/main.scss */
+
+// 这是全局样式的唯一入口文件
+// 它的职责是按正确的顺序导入其他样式文件
+
+// 1. 导入基础样式
+@use 'base';
+
+// 2. 导入 Markdown 样式
+@use 'markdown';
+
+// 如果未来有其他全局模块的样式，可以继续在这里导入
+// 例如: @use 'custom-scrollbar';

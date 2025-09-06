@@ -1,0 +1,62 @@
+// 这个文件专门为 .markdown-content 容器内的元素定义样式
+// 这确保了从后端渲染的 HTML 内容在整个应用中表现一致
+
+.markdown-content {
+  // === 基础排版 ===
+  p {
+    margin-top: 0;
+    margin-bottom: 0.75rem; // 为段落之间提供呼吸空间
+    line-height: 1.7;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+
+  // === 引用块 ===
+  blockquote {
+    border-left: 3px solid rgb(var(--v-theme-border));
+    padding-left: 1rem;
+    margin: 1rem 0;
+    // 使用 on-surface 颜色配合透明度来表示次要文本
+    color: rgba(var(--v-theme-on-surface), 0.7);
+  }
+
+  // === 代码块 ===
+  // 行内代码
+  code:not(pre > code) {
+    background-color: rgba(var(--v-theme-on-surface), 0.1);
+    color: rgb(var(--v-theme-on-surface));
+    padding: 0.2em 0.4em;
+    margin: 0 0.1em;
+    font-size: 85%;
+    border-radius: 4px;
+  }
+
+  // 代码块容器
+  pre {
+    background-color: rgba(var(--v-theme-on-surface), 0.05);
+    color: rgb(var(--v-theme-on-surface));
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+
+    // pre 元素内的 code 标签不应该有额外的背景或 padding
+    code {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

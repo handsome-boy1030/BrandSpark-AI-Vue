@@ -1,0 +1,29 @@
+// 这个文件定义了应用最基本的骨架和元素样式
+
+// #app 是 Vue 应用的挂载点
+// 我们希望它占满整个视口，并且内部滚动由 Vuetify 的 <v-main> 控制
+#app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; // 防止根元素出现滚动条
+}
+
+// 全局链接样式
+// 移除下划线并继承父元素的颜色，保持 UI 一致性
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// 全局动画关键帧
+// 将这个通用的动画放在基础样式中，方便任何组件调用
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
